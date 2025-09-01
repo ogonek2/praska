@@ -1,0 +1,281 @@
+@font-face {
+  font-family: "f_inter";
+  src: url("/fonts/Inter_24pt-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+:root {
+  --var-color-1: #ffffff;
+  --var-color-2: #000000;
+  --var-color-3: #30C1F0;
+  --var-color-4: #F3F3F3;
+  --var-color-5: #002B5B;
+  --var-background-color: #F3F3FB;
+  --var-max-width: 1440px;
+  --var-horizontal-padding: 25px;
+  --var-vertical-padding: 20px;
+}
+@media (max-width: 1080px) {
+  :root {
+    --var-horizontal-padding: 15px;
+  }
+}
+
+.app-container-navigator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: var(--var-color-5);
+}
+.app-container-navigator .app-container-navigator-bar {
+  width: 100%;
+  max-width: 1440px;
+  padding: var(--var-vertical-padding) var(--var-horizontal-padding);
+  margin: 0 auto;
+}
+.app-container-navigator .app-container-navigator-bar .elements {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 20px;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+@media (max-width: 1380px) {
+  .app-container-navigator .app-container-navigator-bar .elements .element {
+    gap: 10px;
+  }
+}
+@media (max-width: 1280px) {
+  .app-container-navigator .app-container-navigator-bar .elements .element .logo-content-item-text {
+    display: none;
+  }
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .navigator-list nav ul {
+  display: flex;
+  align-items: center;
+  gap: 10px 20px;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .navigator-list nav ul li a {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--var-color-1);
+  font-family: "f_inter";
+  font-weight: 200;
+  text-transform: uppercase;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .navigator-list nav ul li a:hover {
+  color: var(--var-color-3);
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el {
+  display: flex;
+  align-items: center;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a {
+  display: flex;
+  gap: 0 8px;
+  align-items: center;
+  position: relative;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a i {
+  color: var(--var-color-1);
+  font-size: 24px;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a p {
+  font-family: "f_inter";
+  font-weight: 600;
+  color: var(--var-color-1);
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a:hover p,
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a:hover i {
+  color: var(--var-color-3);
+}
+@media (max-width: 1380px) {
+  .app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--var-color-1);
+  }
+  .app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a i {
+    color: var(--var-color-2) !important;
+  }
+  .app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a p {
+    display: none;
+  }
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn {
+  height: 20px;
+  width: 30px;
+  position: relative;
+  overflow: hidden;
+  display: none;
+  cursor: pointer;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn .line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--var-color-1);
+  position: absolute;
+  left: 0;
+  transform-origin: center;
+  transition: 0.4s ease-in;
+  border-radius: 10px;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn .line:nth-child(1) {
+  top: 0;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn .line:nth-child(2) {
+  top: 9px;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn .line:nth-child(3) {
+  top: 9px;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn .line:nth-child(4) {
+  bottom: 0;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn.active .line:nth-child(4), .app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn.active .line:nth-child(1) {
+  opacity: 0;
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn.active .line:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn.active .line:nth-child(3) {
+  transform: rotate(45deg);
+}
+@media (max-width: 1080px) {
+  .app-container-navigator .app-container-navigator-bar .elements .element {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .app-container-navigator .app-container-navigator-bar .elements .element .display_el {
+    gap: 0 24px;
+  }
+  .app-container-navigator .app-container-navigator-bar .elements .element .display_el .burger-btn {
+    display: flex;
+  }
+}
+@media (max-width: 1080px) {
+  .app-container-navigator .app-container-navigator-bar .elements .element:nth-child(1) {
+    display: none;
+  }
+}
+
+.app-container-footer-bar {
+  width: 100%;
+  background-color: var(--var-color-5);
+  padding: 0 !important;
+}
+.app-container-footer-bar .elements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px 50px;
+  width: 100%;
+  max-width: var(--var-max-width);
+  margin: 0 auto;
+  padding: 50px var(--var-horizontal-padding);
+}
+.app-container-footer-bar .elements .element {
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 220px;
+}
+.app-container-footer-bar .elements .element .logo-path {
+  display: flex;
+  align-items: stretch;
+}
+.app-container-footer-bar .elements .element .logo-path img {
+  width: 100%;
+}
+.app-container-footer-bar .elements .element .logo-path span {
+  font-size: 20px;
+  color: var(--var-color-1);
+}
+.app-container-footer-bar .elements .element ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.app-container-footer-bar .elements .element ul li {
+  font-size: 14px;
+  color: #F1F1F1;
+}
+.app-container-footer-bar .elements .element ul li b {
+  font-size: 16px;
+  color: var(--var-color-1);
+}
+@media (max-width: 1280px) {
+  .app-container-footer-bar .elements {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 1280px) and (max-width: 800px) {
+  .app-container-footer-bar .elements .element:nth-child(1) {
+    width: 100%;
+    max-width: unset;
+    order: 5;
+    padding: 50px 0 0;
+  }
+}
+
+.fixed-container-burger-bar {
+  position: fixed;
+  right: 0;
+  height: 100%;
+  z-index: 1000;
+  background-color: var(--var-color-1);
+  padding: var(--var-vertical-padding) var(--var-horizontal-padding);
+  width: 100%;
+  max-width: 250px;
+  visibility: hidden;
+  opacity: 0;
+  right: -200px;
+}
+.fixed-container-burger-bar .content-br-b {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: start;
+}
+.fixed-container-burger-bar .content-br-b ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+.fixed-container-burger-bar .content-br-b ul li {
+  width: 100%;
+  font-size: 16px;
+  color: var(--var-color-2);
+  border-left: 2px solid var(--var-color-3);
+}
+.fixed-container-burger-bar .content-br-b ul li a {
+  display: block;
+  padding-left: 15px;
+  width: 100% !important;
+  line-height: 40px;
+}
+.fixed-container-burger-bar .content-br-b ul li:hover {
+  color: var(--var-color-3);
+}
+.fixed-container-burger-bar .content-br-b .phone {
+  margin-top: 25px;
+}
+.fixed-container-burger-bar .content-br-b .phone a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fixed-container-burger-bar.fade {
+  visibility: visible;
+  opacity: 1;
+  right: 0;
+}

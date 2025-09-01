@@ -1,0 +1,316 @@
+@use 'variables' as *;
+
+.app-container-navigator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--var-color-5);
+
+    .app-container-navigator-bar {
+        width: 100%;
+        max-width: 1440px;
+        padding: var(--var-vertical-padding) var(--var-horizontal-padding);
+        margin: 0 auto;
+
+        .elements {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0 20px;
+
+            .element {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                @media (max-width: 1380px) {
+                    gap: 10px;
+                }
+
+                .logo-content-item-text {
+                    @media (max-width: 1280px) {
+                        display: none;
+                    }
+                }
+
+                .navigator-list {
+                    nav {
+                        ul {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px 20px;
+
+                            li {
+                                a {
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                    color: var(--var-color-1);
+                                    font-family: $inter_font;
+                                    font-weight: 200;
+                                    text-transform: uppercase;
+
+                                    &:hover {
+                                        color: var(--var-color-3);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .display_el {
+                    display: flex;
+                    align-items: center;
+
+                    .phone {
+                        a {
+                            display: flex;
+                            gap: 0 8px;
+                            align-items: center;
+                            position: relative;
+
+                            i {
+                                color: var(--var-color-1);
+                                font-size: 24px;
+                            }
+
+                            p {
+                                font-family: $inter_font;
+                                font-weight: 600;
+                                color: var(--var-color-1);
+                            }
+
+                            &:hover {
+
+                                p,
+                                i {
+                                    color: var(--var-color-3);
+                                }
+                            }
+
+                            @media (max-width: 1380px) {
+                                padding: 10px;
+                                border-radius: 10px;
+                                background-color: var(--var-color-1);
+
+                                i {
+                                    color: var(--var-color-2) !important;
+                                }
+
+                                p {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .burger-btn {
+                        height: 20px;
+                        width: 30px;
+                        position: relative;
+                        overflow: hidden;
+                        display: none;
+                        cursor: pointer;
+
+                        .line {
+                            width: 100%;
+                            height: 2px;
+                            background-color: var(--var-color-1);
+                            position: absolute;
+                            left: 0;
+                            transform-origin: center;
+                            transition: .4s ease-in;
+                            border-radius: 10px;
+
+                            &:nth-child(1) {
+                                top: 0;
+                            }
+
+                            &:nth-child(2) {
+                                top: 9px;
+                            }
+
+                            &:nth-child(3) {
+                                top: 9px;
+                            }
+
+                            &:nth-child(4) {
+                                bottom: 0;
+                            }
+                        }
+
+                        &.active {
+                            .line {
+
+                                &:nth-child(4),
+                                &:nth-child(1) {
+                                    opacity: 0;
+                                }
+
+                                &:nth-child(2) {
+                                    transform: rotate(-45deg);
+                                }
+
+                                &:nth-child(3) {
+                                    transform: rotate(45deg);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 1080px) {
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    .display_el {
+                        gap: 0 24px;
+
+                        .burger-btn {
+                            display: flex;
+                        }
+                    }
+                }
+
+                &:nth-child(1) {
+                    @media (max-width: 1080px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.app-container-footer-bar {
+    width: 100%;
+    background-color: var(--var-color-5);
+    padding: 0 !important;
+
+    .elements {
+        // display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 25px 50px;
+        width: 100%;
+        max-width: var(--var-max-width);
+        margin: 0 auto;
+        padding: 50px var(--var-horizontal-padding);
+
+        .element {
+            width: fit-content;
+            max-width: 220px;
+
+            .logo-path {
+                display: flex;
+                align-items: stretch;
+
+                img {
+                    width: 100%;
+                }
+
+                span {
+                    font-size: 20px;
+                    color: var(--var-color-1);
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                li {
+                    font-size: 14px;
+                    color: #F1F1F1;
+
+                    b {
+                        font-size: 16px;
+                        color: var(--var-color-1);
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 1280px) {
+            justify-content: flex-start;
+
+            @media (max-width: 800px) {
+                .element {
+                    &:nth-child(1) {
+                        width: 100%;
+                        max-width: unset;
+                        order: 5;
+                        padding: 50px 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fixed-container-burger-bar {
+    position: fixed;
+    right: 0;
+    height: 100%;
+    z-index: 1000;
+    background-color: var(--var-color-1);
+    padding: var(--var-vertical-padding) var(--var-horizontal-padding);
+    width: 100%;
+    max-width: 250px;
+
+    visibility: hidden;
+    opacity: 0;
+    right: -200px;
+
+    .content-br-b {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: start;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+
+            li {
+                font-size: 16px;
+                color: var(--var-color-2);
+                line-height: 40px;
+                border-left: 2px solid var(--var-color-3);
+
+                a {
+                    padding-left: 5px;
+                }
+
+                &:hover {
+                    color: var(--var-color-3);
+                }
+            }
+        }
+
+        .phone {
+            margin-top: 25px;
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    }
+
+    &.fade {
+        visibility: visible;
+        opacity: 1;
+        right: 0;
+    }
+}

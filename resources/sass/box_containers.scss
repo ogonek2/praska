@@ -1,0 +1,99 @@
+@use 'variables' as *;
+
+.courier_form-box_block {
+    padding: var(--var-vertical-padding) var(--var-horizontal-padding);
+
+    .backdrop {
+        padding: 100px var(--var-horizontal-padding) !important;
+        width: 100%;
+        padding: var(--var-vertical-padding) var(--var-horizontal-padding);
+        background: url('/storage/source/backgrounds/bubbles.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: var(--var-color-3);
+        border-radius: 25px;
+    }
+    .items-box{
+        display: flex;
+        align-items: flex-start;
+        gap: 25px;
+        .item{
+            width: 100%;
+            max-width: 700px;
+            .title-content{
+                h1{
+                    color: var(--var-color-1);
+                    font-size: 40px;
+                    line-height: normal;
+                    font-weight: 600;
+                }
+                p{
+                    padding: 25px 0;
+                    color: var(--var-color-1);
+                    font-weight: 600;
+                    font-size: 20px;
+                }
+            }
+            &:nth-child(2){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .form-container{
+                    width: 100%;
+                    max-width: 530px;
+                    padding: var(--var-vertical-padding) var(--var-horizontal-padding);
+                    background-color: var(--var-color-1);
+                    border-radius: 25px;
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 25px;
+                        width: 100%;
+                        .enter-element{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+                            label{
+                                font-size: 16px;
+                            }
+                            input{
+                                width: 100%;
+                                height: 48px;
+                                border-radius: 12px;
+                                background-color: #F3F3F3;
+                                text-indent: var(--var-horizontal-padding);
+                                font-size: 16px;
+                                font-weight: 200;
+                                &:focus{
+                                    outline: 1px solid var(--var-color-3);
+                                }
+                            }
+                        }
+                        .btn-sb{
+                            width: 100%;
+                            button{
+                                width: 100%;
+                                .btn{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 880px) {
+        padding: var(--var-vertical-padding) 0 !important;
+        .backdrop{
+            border-radius: unset;
+            .items-box{
+                flex-direction: column;
+                .item{
+                    max-width: unset;
+                }
+            }
+        }
+    }
+}

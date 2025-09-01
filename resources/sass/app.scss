@@ -1,0 +1,36 @@
+@use 'variables' as *;
+
+html, body{
+    background-color: var(--var-background-color);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $inter_font;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s ease-in;
+}
+
+img {
+    vertical-align: middle;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+button,
+input {
+    background-color: unset;
+    border: unset;
+    outline: unset;
+}

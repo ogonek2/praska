@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "f_inter";
+  src: url("/fonts/Inter_24pt-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+:root {
+  --var-color-1: #ffffff;
+  --var-color-2: #000000;
+  --var-color-3: #30C1F0;
+  --var-color-4: #F3F3F3;
+  --var-color-5: #002B5B;
+  --var-background-color: #F3F3FB;
+  --var-max-width: 1440px;
+  --var-horizontal-padding: 25px;
+  --var-vertical-padding: 20px;
+}
+@media (max-width: 1080px) {
+  :root {
+    --var-horizontal-padding: 15px;
+  }
+}
+
+html, body {
+  background-color: var(--var-background-color);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "f_inter";
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease-in;
+}
+
+img {
+  vertical-align: middle;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+button,
+input {
+  background-color: unset;
+  border: unset;
+  outline: unset;
+}

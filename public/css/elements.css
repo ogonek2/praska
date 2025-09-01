@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "f_inter";
+  src: url("/fonts/Inter_24pt-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+:root {
+  --var-color-1: #ffffff;
+  --var-color-2: #000000;
+  --var-color-3: #30C1F0;
+  --var-color-4: #F3F3F3;
+  --var-color-5: #002B5B;
+  --var-background-color: #F3F3FB;
+  --var-max-width: 1440px;
+  --var-horizontal-padding: 25px;
+  --var-vertical-padding: 20px;
+}
+@media (max-width: 1080px) {
+  :root {
+    --var-horizontal-padding: 15px;
+  }
+}
+
+.logo-content-item-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+.logo-content-item-text span p {
+  font-size: 12px;
+  font-family: "f_inter";
+  font-weight: 500;
+  color: var(--var-color-1);
+  text-transform: uppercase;
+}
+.logo-content-item-text:hover svg {
+  animation: slide 0.5s alternate;
+}
+
+.p-uppercase {
+  text-transform: uppercase;
+}
+
+.header-h-title {
+  font-size: 60px;
+  line-height: 100%;
+  font-weight: 900;
+}
+@media (max-width: 1080px) {
+  .header-h-title {
+    font-size: 40px;
+  }
+}
+
+.header-b-title {
+  font-size: 40px;
+  color: var(--var-color-2);
+  font-weight: 700;
+}
+@media (max-width: 1080px) {
+  .header-b-title {
+    font-size: 32px;
+  }
+}
+
+.btn {
+  padding: 15px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.btn p {
+  font-size: 16px;
+  font-family: "f_inter";
+  font-weight: 600;
+}
+
+.btn-style-fas-head_1 {
+  background-color: var(--var-color-3);
+  border: 2px solid var(--var-color-3);
+}
+.btn-style-fas-head_1 p {
+  color: var(--var-color-1);
+}
+.btn-style-fas-head_1:hover {
+  background-color: transparent;
+}
+.btn-style-fas-head_1:hover p {
+  color: var(--var-color-3);
+}
+
+.btn-style-fas-head_2 {
+  background-color: var(--var-color-5);
+  border: 2px solid var(--var-color-5);
+}
+.btn-style-fas-head_2 p {
+  color: var(--var-color-1);
+}
+.btn-style-fas-head_2:hover {
+  background-color: transparent;
+}
+.btn-style-fas-head_2:hover p {
+  color: var(--var-color-5);
+}
+
+.btn-style-fas-head_3 {
+  background-color: var(--var-color-1);
+  border: 2px solid var(--var-color-4);
+}
+.btn-style-fas-head_3 p {
+  color: var(--var-color-2);
+}
+.btn-style-fas-head_3:hover {
+  background-color: transparent;
+  border-color: var(--var-color-5);
+}
+.btn-style-fas-head_3:hover p {
+  color: var(--var-color-5);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
