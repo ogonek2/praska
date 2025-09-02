@@ -6,6 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link rel="shortcut icon" href="{{ asset('storage/source/logo_icon.svg') }}" type="image/x-icon">
+    {{-- Tailwind CSS --}}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#30C1F0',
+                        secondary: '#002B5B',
+                        accent: '#26A9D9',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444'
+                    },
+                    fontFamily: {
+                        'inter': ['f_inter', 'Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in-left': 'fadeInLeft 0.6s ease-out',
+                        'fade-in-right': 'fadeInRight 0.6s ease-out',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        fadeInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
     {{-- Styles --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/box_containers.css') }}">
@@ -13,6 +56,7 @@
     <link rel="stylesheet" href="{{ asset('css/elements.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fixed_elements.css') }}">
     <link rel="stylesheet" href="{{ asset('css/windows.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/tailwind-integration.css') }}">
     {{-- SwiperJs --}}
     <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
     {{-- Font Awesome --}}
@@ -48,6 +92,8 @@
         integrity="sha512-F5Ul1uuyFlGnIT1dk2c4kB4DBdi5wnBJjVhL7gQlGh46Xn0VhvD8kgxLtjdZ5YN83gybk/aASUAlpdoWUjRR3g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    {{-- Modern UI JavaScript --}}
+    <script src="{{ asset('js/modern-ui.js') }}"></script>
     @yield('scripts')
     <script>
         $(document).ready(function() {

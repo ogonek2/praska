@@ -2,20 +2,31 @@
 
 html, body{
     background-color: var(--var-background-color);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: $inter_font;
+    font-family: $inter_font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     outline: none;
     -webkit-tap-highlight-color: transparent;
-    transition: all .2s ease-in;
+    transition: all var(--transition-normal);
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 img {
     vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 ul,
@@ -26,6 +37,7 @@ li {
 a {
     color: unset;
     text-decoration: none;
+    transition: color var(--transition-fast);
 }
 
 button,
@@ -33,4 +45,33 @@ input {
     background-color: unset;
     border: unset;
     outline: unset;
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+input {
+    transition: all var(--transition-fast);
+}
+
+/* Utility classes for better cross-browser support */
+.gap-fallback {
+    margin: -10px;
+    
+    > * {
+        margin: 10px;
+    }
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-appearance: none) {
+    .safari-gap-fix {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
 }

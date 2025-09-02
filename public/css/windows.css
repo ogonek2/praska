@@ -38,6 +38,14 @@
   background-color: var(--var-color-1);
   z-index: 10;
   position: relative;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.9);
+  transition: all var(--transition-normal);
+}
+
+.modal.active .modal-container {
+  transform: scale(1);
 }
 .modal .modal-container .m-head {
   padding: 0 0 15px;
@@ -67,14 +75,48 @@
 .modal .modal-container .m-body form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
   width: 100%;
+  /* Fallback for browsers that don't support gap */
+  margin: -12.5px 0;
+}
+
+.modal .modal-container .m-body form > * {
+  margin: 12.5px 0;
+}
+
+/* Modern browsers with gap support */
+@supports (gap: 1px) {
+  .modal .modal-container .m-body form {
+    margin: 0;
+    gap: 25px;
+  }
+  
+  .modal .modal-container .m-body form > * {
+    margin: 0;
+  }
 }
 .modal .modal-container .m-body form .enter-element {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  /* Fallback for browsers that don't support gap */
+  margin: -2.5px 0;
+}
+
+.modal .modal-container .m-body form .enter-element > * {
+  margin: 2.5px 0;
+}
+
+/* Modern browsers with gap support */
+@supports (gap: 1px) {
+  .modal .modal-container .m-body form .enter-element {
+    margin: 0;
+    gap: 5px;
+  }
+  
+  .modal .modal-container .m-body form .enter-element > * {
+    margin: 0;
+  }
 }
 .modal .modal-container .m-body form .enter-element label {
   font-size: 16px;
@@ -82,14 +124,21 @@
 .modal .modal-container .m-body form .enter-element input {
   width: 100%;
   height: 48px;
-  border-radius: 12px;
+  border-radius: var(--border-radius-md);
   background-color: #F3F3F3;
-  text-indent: var(--var-horizontal-padding);
+  padding: 0 var(--var-horizontal-padding);
   font-size: 16px;
   font-weight: 200;
+  border: 2px solid transparent;
+  transition: all var(--transition-fast);
 }
+
 .modal .modal-container .m-body form .enter-element input:focus {
-  outline: 1px solid var(--var-color-3);
+  outline: none;
+  border-color: var(--var-color-3);
+  background-color: var(--var-color-1);
+  box-shadow: 0 0 0 3px rgba(48, 193, 240, 0.1);
+  transform: translateY(-1px);
 }
 .modal .modal-container .m-body form .btn-sb {
   width: 100%;
@@ -108,4 +157,10 @@
   background-color: rgba(0, 0, 0, 0.6);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.modal.active .overlay {
+  opacity: 1;
 }

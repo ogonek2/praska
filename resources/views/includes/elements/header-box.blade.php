@@ -1,58 +1,80 @@
-<div class="app-container-elements-box box header-box_block">
-    <div class="items-box">
-        <div class="item">
-            <div class="content-h-b">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="">
-                                <p class="text-t">Еко-чистка одягу</p>
-                                <img src="{{ asset('storage/source/svg/icons/icon_1.svg') }}" alt="Еко-чистка одягу">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <p class="text-t">Прання килимів</p>
-                                <img src="{{ asset('storage/source/svg/icons/icon_2.svg') }}" alt="Прання килимів">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <p class="text-t">Чистка м’яких меблів</p>
-                                <img src="{{ asset('storage/source/svg/icons/icon_3.svg') }}"
-                                    alt="Чистка м’яких меблів">
-                            </a>
-                        </li>
-                    </ul>
+<div class="relative bg-gradient-to-br from-primary to-secondary min-h-screen flex items-center overflow-hidden">
+    {{-- Background Pattern --}}
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            {{-- Content --}}
+            <div class="text-white space-y-8 animate-fade-in-left">
+                {{-- Navigation --}}
+                <nav class="flex flex-wrap gap-4 mb-8">
+                    <a href="#" class="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300">
+                        <img src="{{ asset('storage/source/svg/icons/icon_1.svg') }}" alt="Еко-чистка одягу" class="w-6 h-6">
+                        <span class="text-sm font-medium">Еко-чистка одягу</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300">
+                        <img src="{{ asset('storage/source/svg/icons/icon_2.svg') }}" alt="Прання килимів" class="w-6 h-6">
+                        <span class="text-sm font-medium">Прання килимів</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300">
+                        <img src="{{ asset('storage/source/svg/icons/icon_3.svg') }}" alt="Чистка м'яких меблів" class="w-6 h-6">
+                        <span class="text-sm font-medium">Чистка м'яких меблів</span>
+                    </a>
                 </nav>
-                <blockquote>
-                    <h1 class="header-h-title">
-                        Еко-чистка одягу
-                        та домашнього
+                
+                {{-- Main Content --}}
+                <div class="space-y-6">
+                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                        Еко-чистка <span class="text-primary">одягу</span><br>
+                        та домашнього<br>
                         текстилю
                     </h1>
-                    <p>
+                    <p class="text-xl text-gray-200 leading-relaxed">
                         Від дверей до дверей. Без зайвих турбот, точно вчасно
                         і з ідеальним результатом.
                     </p>
-                </blockquote>
-                <div class="buttons_ft_h">
-                    <a href="#">
-                        <div class="btn btn-style-fas-head_2">
-                            <p>Викликати кур’єра</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="btn btn-style-fas-head_3">
-                            <p>Наші послуги</p>
-                        </div>
+                </div>
+                
+                {{-- CTA Buttons --}}
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl modal_fade" data-modal="feedbackmd">
+                        <i class="fas fa-phone mr-2"></i>Викликати кур'єра
+                    </button>
+                    <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-secondary px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-list mr-2"></i>Наші послуги
                     </a>
                 </div>
+                
+                {{-- Quick Stats --}}
+                <div class="grid grid-cols-3 gap-6 pt-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary">24/7</div>
+                        <div class="text-sm text-gray-200">Доставка</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary">100%</div>
+                        <div class="text-sm text-gray-200">Екологічно</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary">24ч</div>
+                        <div class="text-sm text-gray-200">Виконання</div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <div class="image-banner-block">
-                <img src="{{ asset('storage/source/images/women.png') }}" alt="Еко-чистка одягу та домашнього текстилю">
+            
+            {{-- Hero Image --}}
+            <div class="relative animate-fade-in-right">
+                <div class="relative z-10">
+                    <img src="{{ asset('storage/source/images/women.png') }}" alt="Еко-чистка одягу та домашнього текстилю" class="w-full h-auto rounded-2xl shadow-2xl" loading="lazy">
+                </div>
+                {{-- Floating Elements --}}
+                <div class="absolute -top-4 -right-4 bg-primary text-white p-4 rounded-full shadow-lg animate-bounce-slow">
+                    <i class="fas fa-truck text-2xl"></i>
+                </div>
+                <div class="absolute -bottom-4 -left-4 bg-success text-white p-4 rounded-full shadow-lg animate-pulse-slow">
+                    <i class="fas fa-leaf text-2xl"></i>
+                </div>
             </div>
         </div>
     </div>

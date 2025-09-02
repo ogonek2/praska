@@ -1,40 +1,74 @@
-<div class="app-container-elements-box box courier_form-box_block">
-    <div class="backdrop">
-        <div class="items-box">
-            <div class="item">
-                <div class="title-content">
-                    <h1>
-                        Бажаєте замовити кур’єра<br>
-                        або залишились питання?
-                    </h1>
-                    <p>
-                        Протягом 10 хвилин після отримання замовлення з вами зв’яжеться наш менеджер для уточнення
-                        деталей та узгодження умов — за умови, що замовлення надійшло в робочий час. Якщо звернення
-                        отримано в неробочий час, ми сконтактуємо з вами наступного робочого дня в період з 10:00 до
-                        20:00.
-                    </p>
+<div class="py-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            {{-- Content --}}
+            <div class="text-white space-y-6 animate-fade-in-left">
+                <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
+                    Бажаєте замовити <span class="text-primary">кур'єра</span><br>
+                    або залишились питання?
+                </h2>
+                <p class="text-lg text-gray-200 leading-relaxed">
+                    Протягом 10 хвилин після отримання замовлення з вами зв'яжеться наш менеджер для уточнення
+                    деталей та узгодження умов — за умови, що замовлення надійшло в робочий час. Якщо звернення
+                    отримано в неробочий час, ми сконтактуємо з вами наступного робочого дня в період з 10:00 до
+                    20:00.
+                </p>
+                
+                {{-- Quick Benefits --}}
+                <div class="grid grid-cols-2 gap-4 pt-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-white/20 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-clock text-sm"></i>
+                        </div>
+                        <span class="text-sm">10 хвилин</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-white/20 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-phone text-sm"></i>
+                        </div>
+                        <span class="text-sm">Швидкий зв'язок</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-white/20 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-truck text-sm"></i>
+                        </div>
+                        <span class="text-sm">Безкоштовно</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-white/20 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-tie text-sm"></i>
+                        </div>
+                        <span class="text-sm">Персональний менеджер</span>
+                    </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="form-container">
-                    <form action="">
-                        <div class="enter-element">
-                            <label for="name">Ім’я*</label>
-                            <input type="text" name="name" id="name" placeholder="Ваше ім’я">
+            
+            {{-- Form --}}
+            <div class="animate-fade-in-right">
+                <div class="bg-white rounded-2xl shadow-2xl p-8">
+                    <form action="" class="space-y-6">
+                        <div class="space-y-4">
+                            <div class="form-group">
+                                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Ім'я*</label>
+                                <input type="text" name="name" id="name" placeholder="Ваше ім'я" 
+                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-all duration-300">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Номер телефону*</label>
+                                <input type="tel" name="phone" id="phone" placeholder="+38 (__) ___ __-__" 
+                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-all duration-300">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Повідомлення</label>
+                                <textarea name="message" id="message" placeholder="Ваше повідомлення" rows="3"
+                                          class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-all duration-300 resize-none"></textarea>
+                            </div>
                         </div>
-                        <div class="enter-element">
-                            <label for="phone">Номер телефону*</label>
-                            <input type="text" name="phone" id="phone" placeholder="+38 (__) ___ __-__">
-                        </div>
-                        <div class="enter-element">
-                            <label for="message">Повідомлення</label>
-                            <input type="text" name="message" id="message" placeholder="Ваше повідомлення">
-                        </div>
-                        <div class="btn-sb">
-                            <button type="submit">
-                                <div class="btn btn-style-fas-head_2">
-                                    <p>Зв’язатися</p>
-                                </div>
+                        
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Зв'язатися
                             </button>
                         </div>
                     </form>
