@@ -13,10 +13,12 @@ class CreateService extends CreateRecord
     protected function handleRecordCreation(array $data): \Illuminate\Database\Eloquent\Model
     {
         $groups = $data['groups'] ?? [];
-        unset($data['groups']);
+        $categories = $data['categories'] ?? [];
+        unset($data['groups'], $data['categories']);
         
         $record = static::getModel()::create($data);
         $record->groups()->sync($groups);
+        $record->categories()->sync($categories);
         
         return $record;
     }

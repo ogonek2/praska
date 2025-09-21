@@ -45,11 +45,16 @@ class ServiceResource extends Resource
                     ->label('Значення'),
                 Forms\Components\TextInput::make('href')
                     ->label('URL'),
+                Forms\Components\Select::make('categories')
+                    ->label('Категорії')
+                    ->searchable()
+                    ->multiple()
+                    ->options(\App\Models\Category::pluck('name', 'id')),
                 Forms\Components\Select::make('groups')
                     ->label('Групи')
+                    ->searchable()
                     ->multiple()
-                    ->options(\App\Models\Group::pluck('name', 'id'))
-                    ->relationship('groups', 'name'),
+                    ->options(\App\Models\Group::pluck('name', 'id')),
             ]);
     }
 
@@ -67,6 +72,11 @@ class ServiceResource extends Resource
                     ->label('Заголовок'),
                 Tables\Columns\TextColumn::make('value')
                     ->label('Значення'),
+                Tables\Columns\TextColumn::make('categories.name')
+                    ->label('Категорії')
+                    ->formatStateUsing(function ($record) {
+                        return $record->categories->pluck('name')->join(', ');
+                    }),
                 Tables\Columns\TextColumn::make('groups.name')
                     ->label('Групи')
                     ->formatStateUsing(function ($record) {

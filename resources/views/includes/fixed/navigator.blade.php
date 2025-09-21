@@ -124,7 +124,6 @@
                 box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
             "
                 onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <i class="fas fa-broom" style="margin-right: 8px;"></i>
                 Замовити чистку
             </button>
 

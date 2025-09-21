@@ -84,6 +84,12 @@
             </div>
         </div>
     </div>
+
+    {{-- Back to Top Button --}}
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary hover:bg-accent text-white rounded-full w-12 h-12 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 z-50 opacity-0 invisible">
+        <i class="fas fa-arrow-up text-lg"></i>
+    </button>
+
     {{-- Jquery --}}
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -115,6 +121,34 @@
             $(this).toggleClass('active')
             $('.fixed-container-burger-bar').toggleClass('fade')
         })
+    </script>
+
+    {{-- Back to Top Button Script --}}
+    <script>
+        $(document).ready(function() {
+            // Show/hide back to top button based on scroll position
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#back-to-top').removeClass('opacity-0 invisible').addClass('opacity-100 visible');
+                } else {
+                    $('#back-to-top').removeClass('opacity-100 visible').addClass('opacity-0 invisible');
+                }
+            });
+
+            // Smooth scroll to top when button is clicked
+            $('#back-to-top').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 800, 'easeInOutQuart');
+                return false;
+            });
+
+            // Add easing function for smooth scroll
+            $.easing.easeInOutQuart = function (x, t, b, c, d) {
+                if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
+                return -c/2 * ((t-=2)*t*t*t - 2) + b;
+            };
+        });
     </script>
 </body>
 
