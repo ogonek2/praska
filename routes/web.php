@@ -1,10 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\indexController;
-use App\Http\Controllers\admin\CategoryController;
-use App\Http\Controllers\admin\servicesController;
-use App\Http\Controllers\admin\B2bController;
 use App\Http\Controllers\IndexServices;
 
 /*
@@ -28,11 +24,5 @@ Route::get('/dostavka', [IndexServices::class, 'delivery'])->name('delivery_page
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', [IndexController::class, 'showADM'])->name('show');
-    Route::resource('categories', CategoryController::class);
-    Route::resource('services', servicesController::class);
-    Route::resource('b2b', B2bController::class);
-});
 
 Auth::routes();

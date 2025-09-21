@@ -5,7 +5,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "f_inter";
   src: url("/fonts/Inter_24pt-Bold.ttf");
@@ -13,7 +12,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "f_inter";
   src: url("/fonts/Inter_24pt-SemiBold.ttf");
@@ -21,7 +19,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 :root {
   --var-color-1: #ffffff;
   --var-color-2: #000000;
@@ -32,7 +29,6 @@
   --var-max-width: 1440px;
   --var-horizontal-padding: 25px;
   --var-vertical-padding: 20px;
-  
   /* Modern CSS variables for better design */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -45,7 +41,6 @@
   --transition-normal: 0.25s ease-in-out;
   --transition-slow: 0.35s ease-in-out;
 }
-
 @media (max-width: 1080px) {
   :root {
     --var-horizontal-padding: 15px;
@@ -113,7 +108,6 @@ input {
 .gap-fallback {
   margin: -10px;
 }
-
 .gap-fallback > * {
   margin: 10px;
 }
@@ -121,9 +115,6 @@ input {
 /* Safari-specific fixes */
 @supports (-webkit-appearance: none) {
   .safari-gap-fix {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
   }
 }

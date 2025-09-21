@@ -5,31 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Group extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name', 'price', 'title', 'value', 'href',
+        'name', 'href',
     ];
 
-    public function categories()
+    public function services()
     {
-        return $this->belongsToMany(Category::class);
-    }
-
-    public function groups()
-    {
-        return $this->belongsToMany(Group::class, 'service_group');
+        return $this->belongsToMany(Service::class, 'service_group');
     }
 
     protected static function boot()
     {
         parent::boot();
 
-        static::saving(function ($service) {
-            if (empty($service->href)) {
-                $service->href = self::generateHref($service->name);
+        static::saving(function ($group) {
+            if (empty($group->href)) {
+                $group->href = self::generateHref($group->name);
             }
         });
     }

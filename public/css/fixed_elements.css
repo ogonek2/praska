@@ -3,6 +3,21 @@
   src: url("/fonts/Inter_24pt-Regular.ttf");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "f_inter";
+  src: url("/fonts/Inter_24pt-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "f_inter";
+  src: url("/fonts/Inter_24pt-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 :root {
   --var-color-1: #ffffff;
@@ -14,6 +29,17 @@
   --var-max-width: 1440px;
   --var-horizontal-padding: 25px;
   --var-vertical-padding: 20px;
+  /* Modern CSS variables for better design */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 25px;
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.25s ease-in-out;
+  --transition-slow: 0.35s ease-in-out;
 }
 @media (max-width: 1080px) {
   :root {
@@ -40,46 +66,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* Fallback for browsers that don't support gap */
-  margin: 0 -10px;
-}
-
-.app-container-navigator .app-container-navigator-bar .elements > * {
-  margin: 0 10px;
-}
-
-/* Modern browsers with gap support */
-@supports (gap: 1px) {
-  .app-container-navigator .app-container-navigator-bar .elements {
-    margin: 0;
-    gap: 0 20px;
-  }
-  
-  .app-container-navigator .app-container-navigator-bar .elements > * {
-    margin: 0;
-  }
+  gap: 0 20px;
 }
 .app-container-navigator .app-container-navigator-bar .elements .element {
   display: flex;
   align-items: center;
-  /* Fallback for browsers that don't support gap */
-  margin: 0 -20px;
-}
-
-.app-container-navigator .app-container-navigator-bar .elements .element > * {
-  margin: 0 20px;
-}
-
-/* Modern browsers with gap support */
-@supports (gap: 1px) {
-  .app-container-navigator .app-container-navigator-bar .elements .element {
-    margin: 0;
-    gap: 40px;
-  }
-  
-  .app-container-navigator .app-container-navigator-bar .elements .element > * {
-    margin: 0;
-  }
+  gap: 40px;
 }
 @media (max-width: 1380px) {
   .app-container-navigator .app-container-navigator-bar .elements .element {
@@ -94,24 +86,7 @@
 .app-container-navigator .app-container-navigator-bar .elements .element .navigator-list nav ul {
   display: flex;
   align-items: center;
-  /* Fallback for browsers that don't support gap */
-  margin: -5px -10px;
-}
-
-.app-container-navigator .app-container-navigator-bar .elements .element .navigator-list nav ul > * {
-  margin: 5px 10px;
-}
-
-/* Modern browsers with gap support */
-@supports (gap: 1px) {
-  .app-container-navigator .app-container-navigator-bar .elements .element .navigator-list nav ul {
-    margin: 0;
-    gap: 10px 20px;
-  }
-  
-  .app-container-navigator .app-container-navigator-bar .elements .element .navigator-list nav ul > * {
-    margin: 0;
-  }
+  gap: 10px 20px;
 }
 .app-container-navigator .app-container-navigator-bar .elements .element .navigator-list nav ul li a {
   font-size: 16px;
@@ -130,26 +105,9 @@
 }
 .app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a {
   display: flex;
+  gap: 0 8px;
   align-items: center;
   position: relative;
-  /* Fallback for browsers that don't support gap */
-  margin: 0 -4px;
-}
-
-.app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a > * {
-  margin: 0 4px;
-}
-
-/* Modern browsers with gap support */
-@supports (gap: 1px) {
-  .app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a {
-    margin: 0;
-    gap: 0 8px;
-  }
-  
-  .app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a > * {
-    margin: 0;
-  }
 }
 .app-container-navigator .app-container-navigator-bar .elements .element .display_el .phone a i {
   color: var(--var-color-1);
@@ -244,34 +202,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 25px 50px;
   width: 100%;
   max-width: var(--var-max-width);
   margin: 0 auto;
   padding: 50px var(--var-horizontal-padding);
-  /* Fallback for browsers that don't support gap */
-  margin: 0 auto -25px -25px;
-  padding: 50px var(--var-horizontal-padding) 25px 25px;
-}
-
-.app-container-footer-bar .elements > * {
-  margin: 0 0 25px 25px;
-}
-
-/* Modern browsers with gap support */
-@supports (gap: 1px) {
-  .app-container-footer-bar .elements {
-    margin: 0 auto;
-    padding: 50px var(--var-horizontal-padding);
-    gap: 25px 50px;
-  }
-  
-  .app-container-footer-bar .elements > * {
-    margin: 0;
-  }
 }
 .app-container-footer-bar .elements .element {
   width: -moz-fit-content;
-  width: -webkit-fit-content;
   width: fit-content;
   max-width: 220px;
 }
@@ -289,24 +227,7 @@
 .app-container-footer-bar .elements .element ul {
   display: flex;
   flex-direction: column;
-  /* Fallback for browsers that don't support gap */
-  margin: -7.5px 0;
-}
-
-.app-container-footer-bar .elements .element ul > * {
-  margin: 7.5px 0;
-}
-
-/* Modern browsers with gap support */
-@supports (gap: 1px) {
-  .app-container-footer-bar .elements .element ul {
-    margin: 0;
-    gap: 15px;
-  }
-  
-  .app-container-footer-bar .elements .element ul > * {
-    margin: 0;
-  }
+  gap: 15px;
 }
 .app-container-footer-bar .elements .element ul li {
   font-size: 14px;
@@ -347,60 +268,22 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 25px;
   align-items: start;
-  /* Fallback for browsers that don't support gap */
-  margin: -12.5px 0;
-}
-
-.fixed-container-burger-bar .content-br-b > * {
-  margin: 12.5px 0;
-}
-
-/* Modern browsers with gap support */
-@supports (gap: 1px) {
-  .fixed-container-burger-bar .content-br-b {
-    margin: 0;
-    gap: 25px;
-  }
-  
-  .fixed-container-burger-bar .content-br-b > * {
-    margin: 0;
-  }
 }
 .fixed-container-burger-bar .content-br-b ul {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  /* Fallback for browsers that don't support gap */
-  margin: -7px 0;
-}
-
-.fixed-container-burger-bar .content-br-b ul > * {
-  margin: 7px 0;
-}
-
-/* Modern browsers with gap support */
-@supports (gap: 1px) {
-  .fixed-container-burger-bar .content-br-b ul {
-    margin: 0;
-    gap: 14px;
-  }
-  
-  .fixed-container-burger-bar .content-br-b ul > * {
-    margin: 0;
-  }
+  gap: 14px;
 }
 .fixed-container-burger-bar .content-br-b ul li {
-  width: 100%;
   font-size: 16px;
   color: var(--var-color-2);
+  line-height: 40px;
   border-left: 2px solid var(--var-color-3);
 }
 .fixed-container-burger-bar .content-br-b ul li a {
-  display: block;
-  padding-left: 15px;
-  width: 100% !important;
-  line-height: 40px;
+  padding-left: 5px;
 }
 .fixed-container-burger-bar .content-br-b ul li:hover {
   color: var(--var-color-3);
@@ -411,24 +294,7 @@
 .fixed-container-burger-bar .content-br-b .phone a {
   display: flex;
   align-items: center;
-  /* Fallback for browsers that don't support gap */
-  margin: 0 -5px;
-}
-
-.fixed-container-burger-bar .content-br-b .phone a > * {
-  margin: 0 5px;
-}
-
-/* Modern browsers with gap support */
-@supports (gap: 1px) {
-  .fixed-container-burger-bar .content-br-b .phone a {
-    margin: 0;
-    gap: 10px;
-  }
-  
-  .fixed-container-burger-bar .content-br-b .phone a > * {
-    margin: 0;
-  }
+  gap: 10px;
 }
 .fixed-container-burger-bar.fade {
   visibility: visible;
