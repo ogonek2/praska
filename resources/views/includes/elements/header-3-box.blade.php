@@ -1,4 +1,4 @@
-<div class="bg-white py-20">
+<div class="py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-secondary mb-4">Наші послуги</h2>
